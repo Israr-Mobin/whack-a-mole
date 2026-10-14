@@ -433,16 +433,19 @@
 
     <!-- MyStyles -->
     <Style x:Key="TitleLabel" TargetType="Label">
+        <Setter Property="FontFamily" Value="GameFont" />
         <Setter Property="FontSize" Value="36" />
         <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="TextColor" Value="{StaticResource TitleBrown}" />
         <Setter Property="HorizontalOptions" Value="Center" />
     </Style>
     <Style x:Key="StatLabel" TargetType="Label">
+        <Setter Property="FontFamily" Value="GameFont" />
         <Setter Property="FontSize" Value="20" />
         <Setter Property="TextColor" Value="{StaticResource TitleBrown}" />
     </Style>
     <Style x:Key="GameButton" TargetType="Button">
+        <Setter Property="FontFamily" Value="GameFont" />
         <Setter Property="BackgroundColor" Value="{StaticResource ButtonOrange}" />
         <Setter Property="TextColor" Value="White" />
         <Setter Property="FontSize" Value="20" />

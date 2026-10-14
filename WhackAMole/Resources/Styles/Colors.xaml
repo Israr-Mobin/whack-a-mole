@@ -34,6 +34,9 @@
     <Color x:Key="MoleOutline">#3E2723</Color>
     <Color x:Key="ButtonOrange">#FB8c00</Color>
 
+    <Color x:Key="CellGreen">#9CCC65</Color>
+    <Color x:Key="CellOutline">#558B2F</Color>
+
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
     <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>

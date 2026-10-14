@@ -13,6 +13,7 @@ namespace WhackAMole
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Fredoka.ttf", "GameFont");//MyFont
                 });
 
 #if DEBUG

@@ -27,10 +27,18 @@ namespace WhackAMole
             _gameTimer.Interval = TimeSpan.FromSeconds(1);
             _gameTimer.Tick += (s, e) => _engine.Tick();
         }
-        private void UpdateLabels()
+        private void CreateMoleTapGesture()
         {
-            ScoreLabel.Text = $"Score: {_engine.Score}";
-            TimeLabel.Text = $"Time Remianing: {_engine.TimeRemaining} seconds";
+            var Tap = new TapGestureRecognizer();
+            Tap.Tapped += OnMoleTapped;
+            Mole.GestureRecognizers.Add(Tap);
+        }
+        private static Color GetColor(string key)
+        {
+            if (Application.Current!.Resources.TryGetValue(key, out var value) && value is Color color)
+                return color;
+
+            return Colors.Magenta;
         }
         private void CreateGameGrid()
         {
@@ -46,8 +54,8 @@ namespace WhackAMole
                 {
                     var cell = new Border
                     {
-                        BackgroundColor = Colors.LightGreen,
-                        Stroke = Colors.DarkGreen,
+                        BackgroundColor = GetColor("CellGreen"),
+                        Stroke = GetColor("CellOutline"),
                         StrokeThickness = 3,
                         StrokeShape = new RoundRectangle { CornerRadius = 15 },
                         Margin = new Thickness(5)
@@ -56,14 +64,11 @@ namespace WhackAMole
                 }
             }
         }
-        private void CreateMoleTapGesture()
+        private void UpdateLabels()
         {
-            var Tap = new TapGestureRecognizer();
-            Tap.Tapped += OnMoleTapped;
-            Mole.GestureRecognizers.Add(Tap);
+            ScoreLabel.Text = $"Score: {_engine.Score}";
+            TimeLabel.Text = $"Time Remianing: {_engine.TimeRemaining} seconds";
         }
-
-        // Event handlers
         private async void StartGameButton(object? sender, EventArgs e)
         {
             StartButton.IsEnabled = false;
