@@ -1,67 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WhackAMole.MainPage">
+             x:Class="WhackAMole.MainPage"
+             BackgroundColor="{StaticResource PageBackground}">
 
-    <!-- WhackAMole game -->
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+        <VerticalStackLayout Padding="30,0" Spacing="25">
 
-            <Label 
-                Text="WHACK-A-MOLE"
-                FontSize="32"
-                HorizontalOptions="Center"/>
+            <Label Text="WHACK-A-MOLE" Style="{StaticResource TitleLabel}"/>
 
-            <HorizontalStackLayout
-                HorizontalOptions="Center"
-                Spacing="40">
-
-                <Label 
-                    Text="Score: 0"
-                    FontSize="20"
-                    x:Name="ScoreLabel"/>
-
-                <Label 
-                    Text="Time: 30"
-                    FontSize="20"
-                    x:Name="TimeLabel"/>
-
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="40">
+                <Label x:Name="ScoreLabel" Text="Score: 0" Style="{StaticResource StatLabel}" />
+                <Label x:Name="TimeLabel" Text="Time: 30" Style="{StaticResource StatLabel}" />
             </HorizontalStackLayout>
 
-            <Grid 
-                x:Name="GameGrid"
-                HeightRequest="300"
-                WidthRequest="300">
-
-                <Border 
-                    x:Name="Mole"
-                    ZIndex="1"
-                    Opacity="0"
-                    InputTransparent="True"
-                    Margin="5"
-                    BackgroundColor="SaddleBrown"
-                    StrokeThickness="3"
-                    StrokeShape="RoundRectangle 50"
-                    Padding="10">
-
-                    <Label 
-                        Text="🐹"
-                        FontSize="40"
-                        HorizontalOptions="Center"
-                        VerticalOptions="Center"/>
-
+            <Grid x:Name="GameGrid" HeightRequest="300" WidthRequest="300">
+                <Border x:Name="Mole" 
+                        ZIndex="1"
+                        Opacity="0"
+                        InputTransparent="True"
+                        Margin="5"
+                        BackgroundColor="{StaticResource MoleBrown}"
+                        Stroke="{StaticResource MoleOutline}"
+                        StrokeThickness="3"
+                        StrokeShape="RoundRectangle 50"
+                        Padding="10">
+                    <Label Text="🐹" FontSize="40"
+                            HorizontalOptions="Center" VerticalOptions="Center"/>
                 </Border>
-
             </Grid>
 
-            <Button
-                x:Name="StartButton"
-                Text="Start Game"
-                Clicked="StartGameButton"/>
+            <Button x:Name="StartButton"
+                    Text="Start Game"
+                    Style="{StaticResource GameButton}"
+                    Clicked="StartGameButton"/>
 
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

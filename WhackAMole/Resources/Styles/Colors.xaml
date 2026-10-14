@@ -27,6 +27,13 @@
     <Color x:Key="Gray900">#212121</Color>
     <Color x:Key="Gray950">#141414</Color>
 
+    <!-- MyColorsScheme -->
+    <Color x:Key="PageBackground">#F1F8E9</Color>
+    <Color x:Key="TitleBrown">#5D4037</Color>
+    <Color x:Key="MoleBrown">#8D6E63</Color>
+    <Color x:Key="MoleOutline">#3E2723</Color>
+    <Color x:Key="ButtonOrange">#FB8c00</Color>
+
     <SolidColorBrush x:Key="PrimaryBrush" Color="{StaticResource Primary}"/>
     <SolidColorBrush x:Key="SecondaryBrush" Color="{StaticResource Secondary}"/>
     <SolidColorBrush x:Key="TertiaryBrush" Color="{StaticResource Tertiary}"/>
